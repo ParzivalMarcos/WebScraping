@@ -7,6 +7,7 @@ from models.db_models import Produtos
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models.db_models import base
+# import logging
 
 
 class ProdutosSite:
@@ -58,6 +59,15 @@ class ProdutosSite:
             self.session.add(novo_produto)
             self.session.commit()
 
+if __name__ == '__main__':
 
-produtos = ProdutosSite()
-produtos.Iniciar()
+    # Configurando arquivo de log
+    # logging.basicConfig(
+    #     filename=str(os.getcwd + os.sep + 'log' + os.sep + 'info.log'),
+    #     level=logging.DEBUG,
+    #     format='%(levelname)s %(asctime)s: %(message)s',
+    #     datefmt='%d/%m/%Y %H:%M:%S'
+    # )
+
+    produtos = ProdutosSite()
+    produtos.Iniciar()
